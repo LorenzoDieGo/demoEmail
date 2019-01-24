@@ -1,11 +1,26 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+     <ion-title>
+        E-mailer
+     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.jxc´lksd
+   <div padding>
+      <ion-item>
+         <ion-label color="primary" stacked></ion-label>
+         <ion-input [(ngModel)]="asunto" type="text" placeholder="Asunto"></ion-input>
+      </ion-item>
+      <ion-item>
+            <ion-label color="primary" stacked></ion-label>
+            <ion-input [(ngModel)]="cuerpo" type="text" placeholder="Cuerpo"></ion-input>
+         </ion-item>
+         <ion-item>
+               <ion-label color="primary" stacked></ion-label>
+               <ion-input [(ngModel)]="para" type="text" placeholder="Para: "></ion-input>
+            </ion-item>
+      <button ion-button block (click)="send()">Enviar</button>
+   </div>
+   
 </ion-content>
