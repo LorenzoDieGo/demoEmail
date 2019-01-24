@@ -7,68 +7,20 @@
 </ion-header>
 
 <ion-content padding>
-
-  <form
-     [formGroup]="form"
-     (ngSubmit)="sendMessage()">
-
-     <ion-list>
-
-
-        <ion-item margin-bottom>
-           <ion-label>To:</ion-label>
-           <ion-input
-              type="email"
-              formControlName="to"></ion-input>
-        </ion-item>
-
-
-        <ion-item margin-bottom>
-           <ion-label>Cc:</ion-label>
-           <ion-input
-              type="email"
-              formControlName="cc"></ion-input>
-        </ion-item>
-
-
-        <ion-item margin-bottom>
-           <ion-label>Bcc:</ion-label>
-           <ion-input
-              type="email"
-              formControlName="bcc"></ion-input>
-        </ion-item>
-
-
-        <ion-item margin-bottom>
-           <span
-              ion-button
-              color="primary"
-              text-center
-              block
-              (click)="retrieveAttachment()">Attachment</span>
-        </ion-item>
-
-
-        <ion-item margin-bottom>
-           <ion-label>Subject:</ion-label>
-           <ion-input
-              type="string"
-              formControlName="subject"></ion-input>
-        </ion-item>
-
-
-        <ion-item margin-bottom>
-           <ion-label>Message:</ion-label>
-           <ion-textarea
-              formControlName="message"></ion-textarea>
-        </ion-item>
-
-
-        <button
-           ion-button
-           color="primary"
-           text-center
-           block [disabled]="!form.valid">Send your message</button>
-     </ion-list>
-  </form>
+   <div padding>
+      <ion-item>
+         <ion-label color="primary" stacked></ion-label>
+         <ion-input [(ngModel)]="asunto" type="text" placeholder="Asunto"></ion-input>
+      </ion-item>
+      <ion-item>
+            <ion-label color="primary" stacked></ion-label>
+            <ion-input [(ngModel)]="cuerpo" type="text" placeholder="Cuerpo"></ion-input>
+         </ion-item>
+         <ion-item>
+               <ion-label color="primary" stacked></ion-label>
+               <ion-input [(ngModel)]="para" type="text" placeholder="Para: "></ion-input>
+            </ion-item>
+      <button ion-button block (click)="send()">Enviar</button>
+   </div>
+   
 </ion-content>
